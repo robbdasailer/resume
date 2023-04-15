@@ -63,6 +63,10 @@ module.exports = function(grunt) {
                 src: [ 'index.html' ],
                 dest: './dist/',
                 expand: true
+            },
+            indexHtml: {
+                src: 'public/index.html',
+                dest: 'dist/index.html',
             }
         },
         clean: {
@@ -103,7 +107,8 @@ module.exports = function(grunt) {
            at the top of resume.template.
          */
         // 'copy:favicon',
-        'copy:index'
+        'copy:index',
+        'copy:indexHtml'
     ]);
     grunt.registerTask('serve', [
         'build',
