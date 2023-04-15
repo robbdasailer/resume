@@ -49,19 +49,25 @@ module.exports = function(grunt) {
             build: {
                 cwd: './assets/css',
                 src: [ 'theme.css' ],
-                dest: './build/assets/css',
+                dest: './dist/assets/css',
                 expand: true
             },
             favicon: {
                 cwd: './',
                 src: [ 'favicon.ico' ],
-                dest: './build/',
+                dest: './dist/',
+                expand: true
+            },
+            index: {
+                cwd: './',
+                src: [ 'index.html' ],
+                dest: './dist/',
                 expand: true
             }
         },
         clean: {
             build: {
-                src: [ 'build' ]
+                src: [ 'dist' ]
             }
         }
     });
@@ -96,7 +102,8 @@ module.exports = function(grunt) {
            in the project root. You'll also need to uncomment the <link...> tag
            at the top of resume.template.
          */
-        // 'copy:favicon'
+        // 'copy:favicon',
+        'copy:index'
     ]);
     grunt.registerTask('serve', [
         'build',
